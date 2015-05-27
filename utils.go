@@ -27,7 +27,7 @@ func cache(files []*multipart.FileHeader) (string, error) {
 		id = getId()
 	}
 
-	lst, err := os.Create(fmt.Sprintf("input/cache-%s/list.txt", id))
+	lst, err := os.Create(fmt.Sprintf(CACHE_FILE_LIST_FORMAT, id))
 	if err != nil {
 		return "", err
 	}
@@ -40,7 +40,7 @@ func cache(files []*multipart.FileHeader) (string, error) {
 		}
 		defer got.Close()
 
-		cpy, err := os.Create(fmt.Sprintf("input/cache-%s/file-%d.%s", id, i, ext))
+		cpy, err := os.Create(fmt.Sprintf(CACHE_FILE_NAME_FORMAT, id, i, ext))
 		if err != nil {
 			return "", err
 		}

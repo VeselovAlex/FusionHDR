@@ -4,7 +4,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"fusionhdr/native"
+	"github.com/VeselovAlex/FusionHDR/native"
 	"github.com/go-martini/martini"
 	"html/template"
 	"net/http"
@@ -13,7 +13,8 @@ import (
 
 const (
 	OUTPUT_NAME_FORMAT     = "fusion-%s.jpg"
-	CACHE_FILE_NAME_FORMAT = "input/cache-%s-%d.%s"
+	CACHE_FILE_NAME_FORMAT = "input/cache-%s/file-%d.%s"
+	CACHE_FILE_LIST_FORMAT = "input/cache-%s/list.txt"
 )
 
 const (
